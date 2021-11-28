@@ -11,7 +11,7 @@ import styles from "./home.module.scss";
 type HomeProps = {
   product: {
     priceId: string;
-    amount: number;
+    amount: string;
   };
 };
 
@@ -34,9 +34,7 @@ export default function Home({ product }: HomeProps) {
             Get access to all the publications <br />
             <span>for {product.amount} month</span>
           </p>
-          {!session?.activeSubscription && (
-            <SubscribeButton priceId={product.priceId} />
-          )}
+          {!session?.activeSubscription && <SubscribeButton />}
         </section>
         <img src="/images/avatar.svg" alt="Girl coding" />
       </main>
